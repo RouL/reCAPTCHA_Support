@@ -15,7 +15,7 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @version		$Id$
  */
 class CaptchaFormReCaptchaListener implements EventListener {
-	private $useCaptcha = false;
+	protected $useCaptcha = false;
 	
 	/**
 	 * @see EventListener::execute()
@@ -24,26 +24,29 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		if (MODULE_SYSTEM_RECAPTCHA && RECAPTCHA_PRIVATEKEY != '' && RECAPTCHA_PUBLICKEY != '') {
 			switch ($eventName) {
 				case 'readParameters':
-					$this->readParametersEvent($eventObj, $className);
+					$this->readParameters($eventObj, $className);
 					break;
 				
 				case 'validate':
-					$this->validateEvent($eventObj, $className);
+					$this->validate($eventObj, $className);
 					break;
 				
 				case 'save':
-					$this->saveEvent();
+					$this->save();
 					break;
 					
 				case 'assignVariables':
-					$this->assignVariablesEvent($eventObj);
+					$this->assignVariables($eventObj);
 					break;
 				
 			}
 		}
 	}
 	
-	private function validateEvent($eventObj, $className) {
+	/**
+	 * Validates the captcha.
+	 */
+	protected function validate($eventObj, $className) {
 		if ($this->useCaptcha) {
 			try {
 				ReCaptchaUtil::validateAnswer();
@@ -60,7 +63,10 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		}
 	}
 	
-	private function assignVariablesEvent($eventObj) {
+	/**
+	 * @see	Page::assignVariables()
+	 */
+	protected function assignVariables($eventObj) {
 		if ($this->useCaptcha) {
 			// we need a positive (true) captchaID for showing the captcha fields.
 			$eventObj->captchaID = true;
@@ -75,7 +81,10 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		}
 	}
 	
-	private function readParametersEvent($eventObj, $className) {
+	/**
+	 * Checks if we need to use a captcha and deactivates the original captcha.
+	 */
+	protected function readParameters($eventObj, $className) {
 		// deactivate original captcha
 		WCF::getSession()->register('captchaDone', true);
 		
@@ -94,7 +103,10 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		}
 	}
 	
-	private function saveEvent() {
+	/**
+	 * Reactivates captchas.
+	 */
+	protected function save() {
 		WCF::getSession()->unregister('captchaDone');
 		WCF::getSession()->unregister('reCaptchaDone');
 	}
