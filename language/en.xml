@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- SVN-ID: $Id$ -->
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="en">
+	<!-- ACP -->
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.security.antispam.recaptcha"><![CDATA[reCAPTCHA]]></item>
+		<item name="wcf.acp.option.category.security.antispam.recaptcha.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.module_system_recaptcha"><![CDATA[reCAPTCHA]]></item>
+		<item name="wcf.acp.option.module_system_recaptcha.description"><![CDATA[Replaces the original captcha with reCAPTCHA]]></item>
+		<item name="wcf.acp.option.recaptcha_privatekey"><![CDATA[Private Key]]></item>
+		<item name="wcf.acp.option.recaptcha_privatekey.description"><![CDATA[To use reCAPTCHA you need a public and a private key. You can get both <a href="http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha">free of cost</a>. Please enter your private key in the textarea above. If you are using more than one domain you need to get a different key for each domain. The domain has to be entered together with the key, separated by a colon (:). Further domains can be added line by line. The domains must not contain "http://". Example:
+www.domain1.com:private-key1
+domain2.com:private-key2
+www.domain.org:private-key3
+…]]></item>
+		<item name="wcf.acp.option.recaptcha_publickey"><![CDATA[Public Key]]></item>
+		<item name="wcf.acp.option.recaptcha_publickey.description"><![CDATA[To use reCAPTCHA you need a public and a private key. You can <a href="http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha">get both free of cost at reCAPTCHA.net</a>. Please enter your public key in the textarea above. If you are using more than one domain you need to get a different key for each domain. The domain has to be entered together with the key, separated by a colon (:). Further domains can be added line by line. The domains must not contain "http://". Example:
+www.domain1.com:public-key1
+domain2.com:public-key2
+www.domain.org:public-key3
+…]]></item>
+		<item name="wcf.acp.option.recaptcha_theme"><![CDATA[Theme]]></item>
+		<item name="wcf.acp.option.recaptcha_theme.description"><![CDATA[Here you can choose between the predefined reCAPTCHA themes.]]></item>
+		<item name="wcf.acp.option.recaptcha_theme.blackglass"><![CDATA[black glass]]></item>
+		<item name="wcf.acp.option.recaptcha_theme.clean"><![CDATA[clean]]></item>
+		<item name="wcf.acp.option.recaptcha_theme.red"><![CDATA[red]]></item>
+		<item name="wcf.acp.option.recaptcha_theme.white"><![CDATA[white]]></item>
+	</category>
+</language>

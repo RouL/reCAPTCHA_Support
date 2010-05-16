@@ -13,7 +13,7 @@
  */
 class ReCaptchaUtil {
 	// supported languages (see <http://recaptcha.net/apidocs/captcha/client.html>)
-	const VALID_LANGUAGES = array(
+	public static $valid_languages = array(
 		'en',
 		'nl',
 		'fr',
@@ -50,7 +50,7 @@ class ReCaptchaUtil {
 	public static function getPublicKey() {
 		// check if multiple keys are given
 		$keys = explode('\n', RECAPTCHA_PUBLICKEY);
-		if (count($keys)) {
+		if (count($keys) > 1) {
 			foreach ($keys as $key) {
 				$keyParts = explode(':', $key);
 				
@@ -62,6 +62,7 @@ class ReCaptchaUtil {
 		else {
 			return RECAPTCHA_PUBLICKEY;
 		}
+		throw new SystemException('No valid public key for reCaptcha found.');
 	}
 
 	/**
@@ -73,7 +74,7 @@ class ReCaptchaUtil {
 	public static function getPrivateKey() {
 		// check if multiple keys are given
 		$keys = explode('\n', RECAPTCHA_PRIVATEKEY);
-		if (count($keys)) {
+		if (count($keys) > 1) {
 			foreach ($keys as $key) {
 				$keyParts = explode(':', $key);
 				
@@ -85,6 +86,7 @@ class ReCaptchaUtil {
 		else {
 			return RECAPTCHA_PRIVATEKEY;
 		}
+		throw new SystemException('No valid private key for reCaptcha found.');
 	}
 	
 	/**
@@ -95,15 +97,17 @@ class ReCaptchaUtil {
 	 * @return	string
 	 */
 	public static function getLanguageCode() {
-		return (array_search(WCF::getLanguage()->getLanguageCode(), self::VALID_LANGUAGES) !== false) ? WCF::getLanguage()->getLanguageCode() : 'en';
+		return (array_search(WCF::getLanguage()->getLanguageCode(), self::$valid_languages) !== false) ? WCF::getLanguage()->getLanguageCode() : 'en';
 	}
 	
 	/**
 	 * Validates the given answer.
 	 */
 	public static function validateAnswer() {
-		$challenge = StringUtil::trim($_POST['recaptcha_challenge_field']);
-		$response = StringUtil::trim($_POST['recaptcha_response_field']);
+		$challenge = '';
+		$response = '';
+		if (isset($_POST['recaptcha_challenge_field'])) $challenge = StringUtil::trim($_POST['recaptcha_challenge_field']);
+		if (isset($_POST['recaptcha_response_field'])) $response = StringUtil::trim($_POST['recaptcha_response_field']);
 		
 		if (empty($challenge) || empty($response)) {
 			throw new UserInputException('captchaString');
@@ -128,7 +132,7 @@ class ReCaptchaUtil {
 				throw new SystemException('reCaptcha returned the following error: '.$verificationResponse);
 		}
 		
-		WCF::getSession()->register('captchaDone', true);
+		WCF::getSession()->register('reCaptchaDone', true);
 	}
 	
 	/**
