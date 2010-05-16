@@ -8,16 +8,16 @@
 		<item name="wcf.acp.option.module_system_recaptcha"><![CDATA[reCAPTCHA]]></item>
 		<item name="wcf.acp.option.module_system_recaptcha.description"><![CDATA[Ersetzt das originale Captcha mit reCAPTCHA]]></item>
 		<item name="wcf.acp.option.recaptcha_privatekey"><![CDATA[Private Key]]></item>
-		<item name="wcf.acp.option.recaptcha_privatekey.description"><![CDATA[Um reCAPTCHA nutzen zu können benötigen Sie einen Public Key und einen Private Key. Sie können beide <a href="http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha">kostenlos bei reCAPTCHA.net bekommen</a>. Bitte tragen Sie ihren Private Key in das Textfeld ein. Sollten Sie mehrere Domains verwenden, muss für jede Domain ein eigener Key beantragt werden. Die Domain wird dann zusammen mit dem Key eingetragen, getrennt durch ein Doppelpunkt (:). Weitere Domains können zeilenweise ergänzt werden. Die Domains sind ohne "http://" anzugeben. Beispiel:
-www.domain1.com:private-key1
-domain2.com:private-key2
-www.domain.org:private-key3
+		<item name="wcf.acp.option.recaptcha_privatekey.description"><![CDATA[Um reCAPTCHA nutzen zu können benötigen Sie einen Public Key und einen Private Key. Sie können beide <a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={'http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha'|rawurlencode}" class="externalURL">kostenlos bei reCAPTCHA.net bekommen</a>. Bitte tragen Sie ihren Private Key in das Textfeld ein. Sollten Sie mehrere Domains verwenden, muss für jede Domain ein eigener Key beantragt werden. Die Domain wird dann zusammen mit dem Key eingetragen, getrennt durch ein Doppelpunkt (:). Weitere Domains können zeilenweise ergänzt werden. Die Domains sind ohne "http://" anzugeben. Beispiel:<br />
+www.domain1.com:private-key1<br />
+domain2.com:private-key2<br />
+www.domain.org:private-key3<br />
 …]]></item>
 		<item name="wcf.acp.option.recaptcha_publickey"><![CDATA[Public Key]]></item>
-		<item name="wcf.acp.option.recaptcha_publickey.description"><![CDATA[Um reCAPTCHA nutzen zu können benötigen Sie einen Public Key und einen Private Key. Sie können beide <a href="http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha">kostenlos bei reCAPTCHA.net bekommen</a>. Bitte tragen Sie ihren Public Key in das Textfeld ein. Sollten Sie mehrere Domains verwenden, muss für jede Domain ein eigener Key beantragt werden. Die Domain wird dann zusammen mit dem Key eingetragen, getrennt durch ein Doppelpunkt (:). Weitere Domains können zeilenweise ergänzt werden. Die Domains sind ohne "http://" anzugeben. Beispiel:
-www.domain1.com:public-key1
-domain2.com:public-key2
-www.domain.org:public-key3
+		<item name="wcf.acp.option.recaptcha_publickey.description"><![CDATA[Um reCAPTCHA nutzen zu können benötigen Sie einen Public Key und einen Private Key. Sie können beide <a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={'http://recaptcha.net/api/getkey?app=info.codingcorner.wcf.recaptcha'|rawurlencode}" class="externalURL">kostenlos bei reCAPTCHA.net bekommen</a>. Bitte tragen Sie ihren Public Key in das Textfeld ein. Sollten Sie mehrere Domains verwenden, muss für jede Domain ein eigener Key beantragt werden. Die Domain wird dann zusammen mit dem Key eingetragen, getrennt durch ein Doppelpunkt (:). Weitere Domains können zeilenweise ergänzt werden. Die Domains sind ohne "http://" anzugeben. Beispiel:<br />
+www.domain1.com:public-key1<br />
+domain2.com:public-key2<br />
+www.domain.org:public-key3<br />
 …]]></item>
 		<item name="wcf.acp.option.recaptcha_theme"><![CDATA[Stil]]></item>
 		<item name="wcf.acp.option.recaptcha_theme.description"><![CDATA[Hier können sie zwischen den vordefinierten reCAPTCHA Stilen wählen.]]></item>

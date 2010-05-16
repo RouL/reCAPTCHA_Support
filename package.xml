@@ -4,7 +4,7 @@
 	<packageinformation>
 		<packagename>reCAPTCHA Support</packagename>
 		<packagedescription>This plugin replaces the original captcha with the popular reCAPTCHA.</packagedescription>
-		<packageurl></packageurl>
+		<packageurl>http://codingcorner.info/projekte/wcf/recaptcha-support/</packageurl>
 		<version>1.0.0</version>
 		<date>2010-05-16</date>
 		<unique>1</unique>
