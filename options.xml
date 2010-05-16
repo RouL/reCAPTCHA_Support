@@ -1,0 +1,53 @@
+﻿<?xml version="1.0"?>
+<!-- SVN-ID: $Id$ -->
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
+	<import>
+		<categories>
+			<category name="security.antispam.recaptcha">
+				<parent>security.antispam</parent>
+				<showorder>2</showorder>
+			</category>
+		</categories>
+		
+		<options>
+			<!-- module.system -->
+			<option name="module_system_recaptcha">
+				<categoryname>module.system</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<!-- /module.system -->
+
+			<!-- security.antispam.recaptcha -->
+			<option name="recaptcha_publickey">
+				<categoryname>security.antispam.recaptcha</categoryname>
+				<optiontype>textarea</optiontype>
+				<validationpattern>^[^/]*$</validationpattern>
+				<defaultvalue></defaultvalue>
+				<showorder>1</showorder>
+			</option>
+
+			<option name="recaptcha_privatekey">
+				<categoryname>security.antispam.recaptcha</categoryname>
+				<optiontype>textarea</optiontype>
+				<validationpattern>^[^/]*$</validationpattern>
+				<defaultvalue></defaultvalue>
+				<showorder>2</showorder>
+			</option>
+
+			<!-- TODO: write a second plugin for adding this to the theme-editor -->
+			<option name="recaptcha_theme">
+				<categoryname>security.antispam.recaptcha</categoryname>
+				<optiontype>select</optiontype>
+				<selectoptions><![CDATA[red:wcf.acp.option.recaptcha_theme.red
+white:wcf.acp.option.recaptcha_theme.white
+blackglass:wcf.acp.option.recaptcha_theme.blackglass
+clean:wcf.acp.option.recaptcha_theme.clean]]></selectoptions>
+				<!-- TODO: add a custom theme -->
+				<defaultvalue>clean</defaultvalue>
+				<showorder>3</showorder>
+			</option>
+			<!-- /security.antispam.recaptcha -->
+		</options>
+	</import>
+</data>
