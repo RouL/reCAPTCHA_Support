@@ -49,7 +49,8 @@ class ReCaptchaUtil {
 	 */
 	public static function getPublicKey() {
 		// check if multiple keys are given
-		$keys = explode('\n', RECAPTCHA_PUBLICKEY);
+		$pubKey = RECAPTCHA_PUBLICKEY;
+		$keys = explode("\n", RECAPTCHA_PUBLICKEY);
 		if (count($keys) > 1) {
 			foreach ($keys as $key) {
 				$keyParts = explode(':', $key);
@@ -73,7 +74,7 @@ class ReCaptchaUtil {
 	 */
 	public static function getPrivateKey() {
 		// check if multiple keys are given
-		$keys = explode('\n', RECAPTCHA_PRIVATEKEY);
+		$keys = explode("\n", RECAPTCHA_PRIVATEKEY);
 		if (count($keys) > 1) {
 			foreach ($keys as $key) {
 				$keyParts = explode(':', $key);
