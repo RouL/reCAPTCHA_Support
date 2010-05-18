@@ -83,18 +83,20 @@ class CaptchaFormReCaptchaListener implements EventListener {
 	
 	/**
 	 * Checks if we need to use a captcha and deactivates the original captcha.
+	 * @todo	debug this
 	 */
 	protected function readParameters($eventObj, $className) {
+		/*echo "|"; var_dump($eventObj); echo "|"; var_dump($className); echo "|";*/ 
 		// deactivate original captcha
 		WCF::getSession()->register('captchaDone', true);
 		
-		if ($className = 'UserLoginForm' && LOGIN_USE_CAPTCHA) {
+		if ($className == 'UserLoginForm' && LOGIN_USE_CAPTCHA) {
 			$this->useCaptcha = true;
 		}
-		elseif ($className = 'RegisterForm' && REGISTER_USE_CAPTCHA) {
+		elseif ($className == 'RegisterForm' && REGISTER_USE_CAPTCHA) {
 			$this->useCaptcha = true;
 		}
-		else {
+		else if ($className != 'UserLoginForm' && $className != 'RegisterForm') {
 			$this->useCaptcha = $eventObj->useCaptcha;
 		}
 		
