@@ -5,8 +5,8 @@
 		<packagename>reCAPTCHA Support</packagename>
 		<packagedescription>This plugin replaces the original captcha with the popular reCAPTCHA.</packagedescription>
 		<packageurl>http://codingcorner.info/projekte/wcf/recaptcha-support/</packageurl>
-		<version>1.0.0 Beta 2</version>
-		<date>2010-05-18</date>
+		<version>1.0.0 Beta 3</version>
+		<date>2010-05-21</date>
 		<unique>1</unique>
 		<plugin>com.woltlab.wcf.data.image.captcha</plugin>
 	</packageinformation>
@@ -40,5 +40,12 @@
 	<instructions type="update" fromversion="1.0.0 Beta 1">
 		<!-- files -->
 		<files>files.tar</files>
+		<templatepatch>templates_b12.diff</templatepatch>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0 Beta 2">
+		<!-- files -->
+		<files>files.tar</files>
+		<templatepatch>templates_b12.diff</templatepatch>
 	</instructions>
 </package>
