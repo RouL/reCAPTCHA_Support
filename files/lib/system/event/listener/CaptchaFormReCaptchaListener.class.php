@@ -72,21 +72,19 @@ class CaptchaFormReCaptchaListener implements EventListener {
 			$eventObj->captchaID = true;
 			
 			WCF::getTPL()->assign(array(
-				'reCaptchaEnabled' => $this->useCaptcha,
 				'reCaptchaPublicKey' => ReCaptchaUtil::getPublicKey(),
 				'reCaptchaLanguage' => ReCaptchaUtil::getLanguageCode(),
 				'reCaptchaUseSSL' => ReCaptchaUtil::useSSL(),
 			));
 			
 		}
+		WCF::getTPL()->assign('reCaptchaEnabled', $this->useCaptcha);
 	}
 	
 	/**
 	 * Checks if we need to use a captcha and deactivates the original captcha.
-	 * @todo	debug this
 	 */
 	protected function readParameters($eventObj, $className) {
-		/*echo "|"; var_dump($eventObj); echo "|"; var_dump($className); echo "|";*/ 
 		// deactivate original captcha
 		WCF::getSession()->register('captchaDone', true);
 		
