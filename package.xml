@@ -36,16 +36,4 @@
 		<languages languagecode="de-informal">language/de-informal.xml</languages>
 		<languages languagecode="en">language/en.xml</languages>
 	</instructions>
-
-	<instructions type="update" fromversion="1.0.0 Beta 1">
-		<!-- files -->
-		<files>files.tar</files>
-		<templatepatch>templates_b12.diff</templatepatch>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.0.0 Beta 2">
-		<!-- files -->
-		<files>files.tar</files>
-		<templatepatch>templates_b12.diff</templatepatch>
-	</instructions>
 </package>
