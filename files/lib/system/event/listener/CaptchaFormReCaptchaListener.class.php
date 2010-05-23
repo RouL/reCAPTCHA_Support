@@ -88,13 +88,26 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		// deactivate original captcha
 		WCF::getSession()->register('captchaDone', true);
 		
-		if ($className == 'UserLoginForm' && LOGIN_USE_CAPTCHA) {
+		if ($eventObj instanceof UserLoginForm) {
+			if (LOGIN_USE_CAPTCHA) {
+				$this->useCaptcha = true;
+			}
+			
+			// Workaround for WCFRCS-2 <http://codingcorner.info/bugtracker/browse/WCFRCS-2>
+			// We deactivate reCAPTCHA in this case, because we can't control the eventlistener.
+			if (defined('FAILED_LOGIN_IP_CAPTCHA') && FAILED_LOGIN_IP_CAPTCHA > 0) {
+				require_once(WCF_DIR.'lib/data/user/login/FailedLogin.class.php');
+				if (FailedLogin::countFailedLogins() > FAILED_LOGIN_IP_CAPTCHA) {
+					if (!($eventObj instanceof UserLoginForm) || !LOGIN_USE_CAPTCHA || WCF::getSession()->getVar('captchaDone')) {
+						$this->useCaptcha = false;
+					}
+				}
+			}
+		}
+		elseif ($eventObj instanceof RegisterForm && REGISTER_USE_CAPTCHA) {
 			$this->useCaptcha = true;
 		}
-		elseif ($className == 'RegisterForm' && REGISTER_USE_CAPTCHA) {
-			$this->useCaptcha = true;
-		}
-		else if ($className != 'UserLoginForm' && $className != 'RegisterForm') {
+		else if (!($eventObj instanceof UserLoginForm) && !($eventObj instanceof RegisterForm)) {
 			$this->useCaptcha = $eventObj->useCaptcha;
 		}
 		
