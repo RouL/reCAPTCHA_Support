@@ -7,7 +7,7 @@
 			<div class="formFieldLabel">
 				<label for="captchaString">{lang}wcf.captcha.captchaString.title{/lang}</label>
 			</div>
-			{if MODULE_SYSTEM_RECAPTCHA && RECAPTCHA_PRIVATEKEY != '' && RECAPTCHA_PUBLICKEY != '' && reCaptchaEnabled}
+			{if MODULE_SYSTEM_RECAPTCHA && RECAPTCHA_PRIVATEKEY != '' && RECAPTCHA_PUBLICKEY != '' && $reCaptchaEnabled|isset && $reCaptchaEnabled}
 				{include file="reCaptcha"}
 			{else}
 			<div class="formField">

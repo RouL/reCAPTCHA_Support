@@ -1,89 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SVN-ID: $Id$ -->
-<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/event-listener.xsd">
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/eventlistener.xsd">
 	<import>
 		<eventlistener>
-			<eventClassName>CaptchaForm</eventClassName>
-			<eventName>readParameters</eventName>
+			<eventclassname>CaptchaForm</eventclassname>
+			<eventname>readParameters</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>CaptchaForm</eventClassName>
-			<eventName>validate</eventName>
+			<eventclassname>CaptchaForm</eventclassname>
+			<eventname>validate</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>CaptchaForm</eventClassName>
-			<eventName>save</eventName>
+			<eventclassname>CaptchaForm</eventclassname>
+			<eventname>save</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>CaptchaForm</eventClassName>
-			<eventName>assignVariables</eventName>
+			<eventclassname>CaptchaForm</eventclassname>
+			<eventname>assignVariables</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>RegisterForm</eventClassName>
-			<eventName>readParameters</eventName>
+			<eventclassname>RegisterForm</eventclassname>
+			<eventname>readParameters</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>RegisterForm</eventClassName>
-			<eventName>validate</eventName>
+			<eventclassname>RegisterForm</eventclassname>
+			<eventname>validate</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>RegisterForm</eventClassName>
-			<eventName>validate</eventName>
+			<eventclassname>RegisterForm</eventclassname>
+			<eventname>assignVariables</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>RegisterForm</eventClassName>
-			<eventName>assignVariables</eventName>
+			<eventclassname>UserLoginForm</eventclassname>
+			<eventname>readParameters</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>UserLoginForm</eventClassName>
-			<eventName>readParameters</eventName>
+			<eventclassname>UserLoginForm</eventclassname>
+			<eventname>validate</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 
 		<eventlistener>
-			<eventClassName>UserLoginForm</eventClassName>
-			<eventName>validate</eventName>
+			<eventclassname>UserLoginForm</eventclassname>
+			<eventname>assignVariables</eventname>
 			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
-		</eventlistener>
-
-		<eventlistener>
-			<eventClassName>UserLoginForm</eventClassName>
-			<eventName>validate</eventName>
-			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
-		</eventlistener>
-
-		<eventlistener>
-			<eventClassName>UserLoginForm</eventClassName>
-			<eventName>assignVariables</eventName>
-			<inherit>1</inherit>
-			<listenerClassFile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerClassFile>
+			<listenerclassfile>lib/system/event/listener/CaptchaFormReCaptchaListener.class.php</listenerclassfile>
 		</eventlistener>
 	</import>
 </data>
