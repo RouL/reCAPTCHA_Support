@@ -12,7 +12,7 @@
  * @todo		Put this into a separate package and implement mailhide specific functions.
  */
 class ReCaptchaUtil {
-	// supported languages (see <http://recaptcha.net/apidocs/captcha/client.html>)
+	// supported languages (see <http://code.google.com/intl/de-DE/apis/recaptcha/docs/customization.html#i18n>)
 	public static $valid_languages = array(
 		'en',
 		'nl',
@@ -24,14 +24,14 @@ class ReCaptchaUtil {
 		'tr',
 	);
 	
-	// server data (see <http://recaptcha.net/apidocs/captcha/>)
-	const RECAPTCHA_HOST = 'api-verify.recaptcha.net';
+	// server data (see <http://code.google.com/intl/de-DE/apis/recaptcha/docs/verify.html>)
+	const RECAPTCHA_HOST = 'www.google.com';
 	const RECAPTCHA_PORT = 80;
-	const RECAPTCHA_PATH = '/verify';
+	const RECAPTCHA_PATH = '/recaptcha/api/verify';
 	
+	
+	// reply codes (see <http://code.google.com/intl/de-DE/apis/recaptcha/docs/verify.html>)
 	const VALID_ANSWER = 'valid';
-	
-	// error codes (see <http://recaptcha.net/apidocs/captcha/>)
 	const ERROR_UNKNOWN = 'unknown';
 	const ERROR_INVALID_PUBLICKEY = 'invalid-site-public-key';
 	const ERROR_INVALID_PRIVATEKEY = 'invalid-site-private-key';
@@ -142,7 +142,7 @@ class ReCaptchaUtil {
 	 * Parts of this function are taken from lib/util/FileUtil.class.php from the
 	 * WoltLab Community Framework which is licensed unter the
 	 * GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>.
-	 * Find more on <http://www.woltlab.com/> and <http://community.woltlab.com/>.
+	 * More on <http://www.woltlab.com/> and <http://community.woltlab.com/>.
 	 * 
 	 * @param	string	$challenge
 	 * @param	string	$response
@@ -161,13 +161,13 @@ class ReCaptchaUtil {
 		
 		// build post string
 		$postData = 'privatekey='.urlencode(self::getPrivateKey());
-		$postData .= '&remoteip='.urlencode($_SERVER['REMOTE_ADDR']);
+		$postData .= '&remoteip='.urlencode(UserUtil::getIpAddress());
 		$postData .= '&challenge='.urlencode($challenge);
 		$postData .= '&response='.urlencode($response);
 		
 		// build and send the http request.
 		$request = "POST ".self::RECAPTCHA_PATH." HTTP/1.0\r\n";
-		$request .= "User-Agent: HTTP.PHP (ReCaptchaUtil.class.php; WoltLab Community Framework/".WCF_VERSION."; ".WCF::getLanguage()->getLanguageCode().")\r\n";
+		$request .= "User-Agent: HTTP.PHP (info.codingcorner.wcf.recaptcha; WoltLab Community Framework/".WCF_VERSION."; ".WCF::getLanguage()->getLanguageCode().")\r\n";
 		$request .= "Accept: */*\r\n";
 		$request .= "Accept-Language: ".WCF::getLanguage()->getLanguageCode()."\r\n";
 		$request .= "Host: ".self::RECAPTCHA_HOST."\r\n";

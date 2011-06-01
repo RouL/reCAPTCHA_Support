@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <!-- SVN-ID: $Id$ -->
-<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/options.xsd">
 	<import>
 		<categories>
 			<category name="security.antispam.recaptcha">
@@ -23,7 +23,7 @@
 				<categoryname>security.antispam.recaptcha</categoryname>
 				<optiontype>textarea</optiontype>
 				<validationpattern>^[^/]*$</validationpattern>
-				<defaultvalue></defaultvalue>
+				<defaultvalue>6LcqvMQSAAAAAHo38_mmquzWiZHcUM6zUOCR2gIa</defaultvalue>
 				<showorder>1</showorder>
 			</option>
 
@@ -31,7 +31,7 @@
 				<categoryname>security.antispam.recaptcha</categoryname>
 				<optiontype>textarea</optiontype>
 				<validationpattern>^[^/]*$</validationpattern>
-				<defaultvalue></defaultvalue>
+				<defaultvalue>6LcqvMQSAAAAAOtqr6QYEvIcGRWBFpQcEyP9glSR</defaultvalue>
 				<showorder>2</showorder>
 			</option>
 
