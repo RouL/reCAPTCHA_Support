@@ -51,7 +51,7 @@ class CaptchaFormReCaptchaListener implements EventListener {
 		if ($this->useCaptcha) {
 			try {
 				ReCaptchaUtil::validateAnswer();
-				$this->useCaptcha = false;
+				if (!$this->forcedCaptcha) $this->useCaptcha = false;
 			}
 			catch (UserInputException $e) {
 				if ($eventObj instanceof RegisterForm) {
