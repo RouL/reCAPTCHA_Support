@@ -1,4 +1,3 @@
-			{* SVN-ID: $Id$ *}
 			<div class="formFieldDesc">
 				<p style="clear:none">{lang}wcf.captcha.captchaString.description{/lang}</p>
 			</div>

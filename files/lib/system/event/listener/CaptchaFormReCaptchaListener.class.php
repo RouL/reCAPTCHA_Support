@@ -12,7 +12,6 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @package		info.codingcorner.wcf.recaptcha
  * @subpackage	system.event.listener
  * @category	reCaptcha Support
- * @version		$Id$
  */
 class CaptchaFormReCaptchaListener implements EventListener {
 	protected $useCaptcha = false;

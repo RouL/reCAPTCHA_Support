@@ -8,7 +8,6 @@
  * @package		info.codingcorner.wcf.recaptcha
  * @subpackage	util
  * @category	reCaptcha Support
- * @version		$Id$
  * @todo		Put this into a separate package and implement mailhide specific functions.
  */
 class ReCaptchaUtil {
