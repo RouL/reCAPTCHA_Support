@@ -32,7 +32,7 @@ class CaptchaFormReCaptchaListener implements EventListener {
 					break;
 				
 				case 'save':
-					$this->save();
+					$this->save($className);
 					break;
 					
 				case 'assignVariables':
@@ -49,7 +49,7 @@ class CaptchaFormReCaptchaListener implements EventListener {
 	protected function validate($eventObj, $className) {
 		if ($this->useCaptcha) {
 			try {
-				ReCaptchaUtil::validateAnswer();
+				ReCaptchaUtil::validateAnswer($className);
 				if (!$this->forcedCaptcha) $this->useCaptcha = false;
 			}
 			catch (UserInputException $e) {
@@ -123,7 +123,7 @@ class CaptchaFormReCaptchaListener implements EventListener {
 			$this->useCaptcha = $eventObj->useCaptcha;
 		}
 		
-		if (WCF::getUser()->userID || WCF::getSession()->getVar('reCaptchaDone') && !$this->forcedCaptcha) {
+		if (WCF::getUser()->userID || WCF::getSession()->getVar('reCaptchaDone_'.$className) && !$this->forcedCaptcha) {
 			$this->useCaptcha = false;
 		}
 	}
@@ -131,9 +131,9 @@ class CaptchaFormReCaptchaListener implements EventListener {
 	/**
 	 * Reactivates captchas.
 	 */
-	protected function save() {
+	protected function save($className) {
 		WCF::getSession()->unregister('captchaDone');
-		WCF::getSession()->unregister('reCaptchaDone');
+		WCF::getSession()->unregister('reCaptchaDone_'.$className);
 	}
 }
 ?>
