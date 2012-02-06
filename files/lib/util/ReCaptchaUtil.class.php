@@ -103,7 +103,7 @@ class ReCaptchaUtil {
 	/**
 	 * Validates the given answer.
 	 */
-	public static function validateAnswer() {
+	public static function validateAnswer($className) {
 		$challenge = '';
 		$response = '';
 		if (isset($_POST['recaptcha_challenge_field'])) $challenge = StringUtil::trim($_POST['recaptcha_challenge_field']);
@@ -132,7 +132,7 @@ class ReCaptchaUtil {
 				throw new SystemException('reCaptcha returned the following error: '.$verificationResponse);
 		}
 		
-		WCF::getSession()->register('reCaptchaDone', true);
+		WCF::getSession()->register('reCaptchaDone_'.$className, true);
 	}
 	
 	/**
