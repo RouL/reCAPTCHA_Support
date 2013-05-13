@@ -1,6 +1,8 @@
 reCAPTCHA Support
 ===============
 
+    Integrated in WCF 2.0
+
 This plugin replaces the original WoltLab Community Framework captcha with the popular reCAPTCHA.
 
 Notes
